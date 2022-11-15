@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AutoSupplierId">
+        <s:complexType />
+      </s:element>
+      <s:element name="AutoSupplierIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutoSupplierIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="supplierID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supplierName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="confirmPw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertSupplierResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertProposal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="proposalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supplierID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drugId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="price" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertProposalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertProposalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDrugName">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDrugNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDrugNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSupplierId">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSupplierIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSupplierIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDrugId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="drugName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDrugIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDrugIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTenders">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTendersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTendersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AutoSupplierIdSoapIn">
+    <wsdl:part name="parameters" element="tns:AutoSupplierId" />
+  </wsdl:message>
+  <wsdl:message name="AutoSupplierIdSoapOut">
+    <wsdl:part name="parameters" element="tns:AutoSupplierIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:insertSupplier" />
+  </wsdl:message>
+  <wsdl:message name="insertSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:insertSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertProposalSoapIn">
+    <wsdl:part name="parameters" element="tns:insertProposal" />
+  </wsdl:message>
+  <wsdl:message name="insertProposalSoapOut">
+    <wsdl:part name="parameters" element="tns:insertProposalResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDrugNameSoapIn">
+    <wsdl:part name="parameters" element="tns:getDrugName" />
+  </wsdl:message>
+  <wsdl:message name="getDrugNameSoapOut">
+    <wsdl:part name="parameters" element="tns:getDrugNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSupplierIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getSupplierId" />
+  </wsdl:message>
+  <wsdl:message name="getSupplierIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getSupplierIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDrugIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getDrugId" />
+  </wsdl:message>
+  <wsdl:message name="getDrugIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getDrugIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTendersSoapIn">
+    <wsdl:part name="parameters" element="tns:getTenders" />
+  </wsdl:message>
+  <wsdl:message name="getTendersSoapOut">
+    <wsdl:part name="parameters" element="tns:getTendersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSupplierSoap">
+    <wsdl:operation name="AutoSupplierId">
+      <wsdl:input message="tns:AutoSupplierIdSoapIn" />
+      <wsdl:output message="tns:AutoSupplierIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertSupplier">
+      <wsdl:input message="tns:insertSupplierSoapIn" />
+      <wsdl:output message="tns:insertSupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertProposal">
+      <wsdl:input message="tns:insertProposalSoapIn" />
+      <wsdl:output message="tns:insertProposalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDrugName">
+      <wsdl:input message="tns:getDrugNameSoapIn" />
+      <wsdl:output message="tns:getDrugNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierId">
+      <wsdl:input message="tns:getSupplierIdSoapIn" />
+      <wsdl:output message="tns:getSupplierIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDrugId">
+      <wsdl:input message="tns:getDrugIdSoapIn" />
+      <wsdl:output message="tns:getDrugIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTenders">
+      <wsdl:input message="tns:getTendersSoapIn" />
+      <wsdl:output message="tns:getTendersSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSupplierSoap" type="tns:WebServiceSupplierSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AutoSupplierId">
+      <soap:operation soapAction="http://tempuri.org/AutoSupplierId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertSupplier">
+      <soap:operation soapAction="http://tempuri.org/insertSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertProposal">
+      <soap:operation soapAction="http://tempuri.org/insertProposal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDrugName">
+      <soap:operation soapAction="http://tempuri.org/getDrugName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierId">
+      <soap:operation soapAction="http://tempuri.org/getSupplierId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDrugId">
+      <soap:operation soapAction="http://tempuri.org/getDrugId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTenders">
+      <soap:operation soapAction="http://tempuri.org/getTenders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSupplierSoap12" type="tns:WebServiceSupplierSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AutoSupplierId">
+      <soap12:operation soapAction="http://tempuri.org/AutoSupplierId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertSupplier">
+      <soap12:operation soapAction="http://tempuri.org/insertSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertProposal">
+      <soap12:operation soapAction="http://tempuri.org/insertProposal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDrugName">
+      <soap12:operation soapAction="http://tempuri.org/getDrugName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierId">
+      <soap12:operation soapAction="http://tempuri.org/getSupplierId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDrugId">
+      <soap12:operation soapAction="http://tempuri.org/getDrugId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTenders">
+      <soap12:operation soapAction="http://tempuri.org/getTenders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceSupplier">
+    <wsdl:port name="WebServiceSupplierSoap" binding="tns:WebServiceSupplierSoap">
+      <soap:address location="http://localhost:54691/WebServiceSupplier.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSupplierSoap12" binding="tns:WebServiceSupplierSoap12">
+      <soap12:address location="http://localhost:54691/WebServiceSupplier.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

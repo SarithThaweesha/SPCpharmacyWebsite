@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="placeOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drugName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drugQty" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="placeOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placeOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="placeOrderPh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pharmacyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drugName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drugQty" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="placeOrderPhResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placeOrderPhResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSPCorders">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSPCordersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSPCordersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPharmacyOrders">
+        <s:complexType />
+      </s:element>
+      <s:element name="getPharmacyOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPharmacyOrdersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registerStaff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="staffID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="staffName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="confirmPw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registerStaffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registerStaffResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registerPharmacies">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pharmacyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pharmacyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="confirmPw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registerPharmaciesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registerPharmaciesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="placeOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:placeOrder" />
+  </wsdl:message>
+  <wsdl:message name="placeOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:placeOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="placeOrderPhSoapIn">
+    <wsdl:part name="parameters" element="tns:placeOrderPh" />
+  </wsdl:message>
+  <wsdl:message name="placeOrderPhSoapOut">
+    <wsdl:part name="parameters" element="tns:placeOrderPhResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSPCordersSoapIn">
+    <wsdl:part name="parameters" element="tns:getSPCorders" />
+  </wsdl:message>
+  <wsdl:message name="getSPCordersSoapOut">
+    <wsdl:part name="parameters" element="tns:getSPCordersResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPharmacyOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:getPharmacyOrders" />
+  </wsdl:message>
+  <wsdl:message name="getPharmacyOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:getPharmacyOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerStaffSoapIn">
+    <wsdl:part name="parameters" element="tns:registerStaff" />
+  </wsdl:message>
+  <wsdl:message name="registerStaffSoapOut">
+    <wsdl:part name="parameters" element="tns:registerStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerPharmaciesSoapIn">
+    <wsdl:part name="parameters" element="tns:registerPharmacies" />
+  </wsdl:message>
+  <wsdl:message name="registerPharmaciesSoapOut">
+    <wsdl:part name="parameters" element="tns:registerPharmaciesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceManageSoap">
+    <wsdl:operation name="placeOrder">
+      <wsdl:input message="tns:placeOrderSoapIn" />
+      <wsdl:output message="tns:placeOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="placeOrderPh">
+      <wsdl:input message="tns:placeOrderPhSoapIn" />
+      <wsdl:output message="tns:placeOrderPhSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSPCorders">
+      <wsdl:input message="tns:getSPCordersSoapIn" />
+      <wsdl:output message="tns:getSPCordersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPharmacyOrders">
+      <wsdl:input message="tns:getPharmacyOrdersSoapIn" />
+      <wsdl:output message="tns:getPharmacyOrdersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="registerStaff">
+      <wsdl:input message="tns:registerStaffSoapIn" />
+      <wsdl:output message="tns:registerStaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="registerPharmacies">
+      <wsdl:input message="tns:registerPharmaciesSoapIn" />
+      <wsdl:output message="tns:registerPharmaciesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceManageSoap" type="tns:WebServiceManageSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="placeOrder">
+      <soap:operation soapAction="http://tempuri.org/placeOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="placeOrderPh">
+      <soap:operation soapAction="http://tempuri.org/placeOrderPh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSPCorders">
+      <soap:operation soapAction="http://tempuri.org/getSPCorders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPharmacyOrders">
+      <soap:operation soapAction="http://tempuri.org/getPharmacyOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerStaff">
+      <soap:operation soapAction="http://tempuri.org/registerStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerPharmacies">
+      <soap:operation soapAction="http://tempuri.org/registerPharmacies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceManageSoap12" type="tns:WebServiceManageSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="placeOrder">
+      <soap12:operation soapAction="http://tempuri.org/placeOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="placeOrderPh">
+      <soap12:operation soapAction="http://tempuri.org/placeOrderPh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSPCorders">
+      <soap12:operation soapAction="http://tempuri.org/getSPCorders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPharmacyOrders">
+      <soap12:operation soapAction="http://tempuri.org/getPharmacyOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerStaff">
+      <soap12:operation soapAction="http://tempuri.org/registerStaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerPharmacies">
+      <soap12:operation soapAction="http://tempuri.org/registerPharmacies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceManage">
+    <wsdl:port name="WebServiceManageSoap" binding="tns:WebServiceManageSoap">
+      <soap:address location="http://localhost:54691/WebServiceManage.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceManageSoap12" binding="tns:WebServiceManageSoap12">
+      <soap12:address location="http://localhost:54691/WebServiceManage.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
